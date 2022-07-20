@@ -15,7 +15,7 @@ from scipy.signal import find_peaks
 def cutting_samples(pos_z): 
     start=[]
     end=[]
-    mode1 = stats.mode(pos_z)  #works with pos_z = dataframe
+    mode1 = stats.mode(pos_z)[0][0]  #works with pos_z = dataframe
     mode1 = math.trunc(mode1)  #Only int part
     for i in range(len(pos_z)):
         whole_part = math.trunc(pos_z[i])
@@ -33,7 +33,7 @@ def cutting_samples(pos_z):
 def extract_pos_z(df1):
     pos_z = df1['Lageistwert_Z'].to_numpy()
     pos_z = pos_z.reshape(len(df1),)
-    #pos_z = pos_z.astype(np.float)
+    pos_z = pos_z.astype(np.float)
     
     return pos_z
 
@@ -42,10 +42,10 @@ def extract_cutting_intervals_level_1(pos_z):
     cutting_pos_z = []
     cutting_sample = []
     
-    plt.figure(figsize=(16,16))
+#    plt.figure(figsize=(16,16))
 #     x,y = sns.kdeplot(pos_z).get_lines()[0].get_data()
 #     plt.close()
-    max1 = stats.mode(pos_z)
+    max1 = stats.mode(pos_z)[0][0]
     
     lower_threshold = max1 - 0.2
     higher_threshold = max1 + 0.2
