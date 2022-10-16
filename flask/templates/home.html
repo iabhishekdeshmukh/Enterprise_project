@@ -1,0 +1,19 @@
+<html>
+    <body bgcolor=#d4a3ae>
+
+        <center>
+
+            <h1> Tool life Prediction </h1><br>
+            <form method="POST", action="{{url_for('predict')}}">
+                <b> Process Name :  <input type="text", name='a', placeholder="SR or SL"> <br><br>
+                 Tool Number :  <input type="number", name='b', placeholder="Eg. 23"> <br><br>
+                 Number of times used :  <input type="number", name='c', placeholder="Eg. 4"> <br><br>
+                 </b>
+                 <input type="submit" , value='predict' >
+            </form>
+        
+        
+        </center>
+
+    </body>
+</html>

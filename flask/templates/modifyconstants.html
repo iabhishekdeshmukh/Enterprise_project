@@ -1,0 +1,20 @@
+<html>
+    <body bgcolor=#d4a3ae>
+
+        <center>
+
+            <h1> Modify </h1><br>
+            <form method="POST", action="{{url_for('predict')}}">
+                <b> Process Name :  <input type="text", name='pn', placeholder="SR or SL"> <br><br>
+                 Tool Number :  <input type="number", name='tn', placeholder="Eg. 23"> <br><br>
+                 Number of times used :  <input type="number", name='nt', placeholder="Eg. 4"> <br><br>
+                 worker's input: <input type="number", name='w', placeholder="How many times more did you use?"> <br><br>
+                 </b>
+                 <input type="submit" , value='predict' >
+            </form>
+        
+        
+        </center>
+
+    </body>
+</html>
